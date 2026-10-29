@@ -1,0 +1,147 @@
+@import "@fontsource/ibm-plex-sans/400.css";
+@import "@fontsource/ibm-plex-sans/500.css";
+@import "@fontsource/ibm-plex-sans/600.css";
+@import "@fontsource/ibm-plex-sans/700.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+@import "tailwindcss";
+
+:root {
+  --bg: #13150f;
+  --surface: #1c1f16;
+  --raised: #262a1e;
+  --fg: #f4f1e6;
+  --muted: #a7a890;
+  --line: #35392c;
+  --amber: #e0a116;
+  --ink: #1a1507;
+  --stop: #e15a50;
+  --onstop: #fff7f5;
+  --ok: #b6d36a;
+  --shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  color-scheme: dark;
+}
+
+:root.light {
+  --bg: #efece3;
+  --surface: #f7f4eb;
+  --raised: #fffdf8;
+  --fg: #1b1d16;
+  --muted: #5c604f;
+  --line: #ddd4c2;
+  --amber: #8a5c08;
+  --ink: #fff8e8;
+  --stop: #b42318;
+  --onstop: #fff7f5;
+  --ok: #3e6a1c;
+  --shadow: 0 0 0 1px rgba(28, 30, 22, 0.08), 0 1px 2px rgba(28, 30, 22, 0.04);
+  color-scheme: light;
+}
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", "Noto Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-raised: var(--raised);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-amber: var(--amber);
+  --color-ink: var(--ink);
+  --color-stop: var(--stop);
+  --color-onstop: var(--onstop);
+  --color-ok: var(--ok);
+  --radius-card: 1rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 2px;
+  }
+
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  img {
+    outline: 1px solid rgba(255, 255, 255, 0.1);
+    outline-offset: -1px;
+  }
+
+  :root.light img {
+    outline-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.dock {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  :root {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --raised: #ffffff;
+    --fg: #16160f;
+    --muted: #3f4236;
+    --line: #ccccc2;
+    --amber: #8a5c08;
+    --ink: #16160f;
+    --stop: #9f1d14;
+    --ok: #2f5a12;
+    --shadow: none;
+  }
+
+  body,
+  html {
+    background: #fff !important;
+    color: #16160f !important;
+  }
+}
