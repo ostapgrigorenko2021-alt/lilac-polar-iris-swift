@@ -3,7 +3,7 @@ import { useStore } from "@/components/store";
 import { money, pct, tr } from "@/lib/format";
 import { dashboardStats } from "@/lib/stats";
 import { Link } from "@tanstack/react-router";
-import { BookOpen, Calculator, ClipboardList, Timer } from "lucide-react";
+import { BookOpen, Calculator, ClipboardList, Timer, Calendar } from "lucide-react";
 
 export function HomePage() {
   const { data } = useStore();
@@ -21,6 +21,7 @@ export function HomePage() {
     { to: "/calc" as const, uk: "Калькулятор ціни", ru: "Калькулятор цены", icon: Calculator },
     { to: "/price" as const, uk: "Прайс Т-СИКС-Т", ru: "Прайс Т-СИКС-Т", icon: BookOpen },
     { to: "/site" as const, uk: "На об'єкті", ru: "На объекте", icon: Timer },
+    { to: "/calendar" as const, uk: "Календар виходів", ru: "Календарь выходов", icon: Calendar },
   ];
 
   return (
