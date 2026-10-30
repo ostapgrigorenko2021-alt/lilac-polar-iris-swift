@@ -1,16 +1,8 @@
 import { AppShell } from "@/components/shell";
 import { useStore } from "@/components/store";
 import { tr } from "@/lib/format";
-import { Link, createRoute } from "@tanstack/react-router";
-import { rootRoute } from "./__root"; // Подключение к корню проекта
+import { Link } from "@tanstack/react-router";
 import { ArrowLeft, Calendar as CalendarIcon } from "lucide-react";
-
-// Регистрируем маршрут для автоматической системы TanStack
-export const Route = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/calendar",
-  component: CalendarPage,
-});
 
 export function CalendarPage() {
   const { data } = useStore();
@@ -83,5 +75,4 @@ export function CalendarPage() {
       </div>
     </AppShell>
   );
-}
 }

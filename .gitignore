@@ -3,3 +3,8 @@ node_modules/
 .github_repo
 .env
 .env.*
+src/pages/.vs/VSWorkspaceState.json
+src/pages/.vs/pages/FileContentIndex/930f8202-3f42-49e8-8cd9-d9f8733f5a5e.vsidx
+src/pages/.vs/pages/v18/DocumentLayout.json
+src/pages/.vs/slnx.sqlite
+src/pages/.vs/pages/v18/.wsuo
