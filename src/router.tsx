@@ -1,16 +1,14 @@
-import { createRouter, createRoute, rootRoute } from "@tanstack/react-router";
+import { createRouter, createRoute } from "@tanstack/react-router";
 import { AppErrorComponent } from "@/lib/error-component";
 import { routeTree } from "./routeTree.gen";
-import { CalendarPage } from "@/pages/calendar"; // Напрямую подключаем твой новый файл
+import { CalendarPage } from "./pages/calendar";
 
-// Создаем жесткий и надежный маршрут для календаря
 const calendarRoute = createRoute({
   getParentRoute: () => routeTree,
   path: "/calendar",
   component: CalendarPage,
 });
 
-// Добавляем календарь в общее дерево роутера
 const updatedRouteTree = routeTree.addChildren([calendarRoute]);
 
 export function getRouter() {
